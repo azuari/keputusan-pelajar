@@ -1,14 +1,34 @@
-const scriptURL = "YOUR_DEPLOYED_WEBAPP_URL"; // ← Ganti kemudian
+const scriptURL = "https://script.google.com/macros/s/AKfycbydnNXbRFtB5zlklvv_VnaFaVIiuKOjIqqbS6o-FNeckDvIXa9Il6ufLuFfxD2PfD5Ydg/exec"; // ganti dengan URL anda
 
-async function fetchKelas() {
-  const res = await fetch(`${scriptURL}?action=getKelas`);
-  const data = await res.json();
-  const select = document.getElementById("kelasSelect");
-  data.kelas.forEach(k => {
-    const opt = document.createElement("option");
-    opt.value = k;
-    opt.textContent = k;
-    select.appendChild(opt);
-  });
-}
-fetchKelas();
+document.addEventListener("DOMContentLoaded", () => {
+  const kelasSelect = document.getElementById("kelasSelect");
+  const pelajarData = document.getElementById("pelajarData");
+
+  fetch(scriptURL)
+    .then(res => res.json())
+    .then(data => {
+      const kodSet = [...new Set(data.map(item => item["KOD KELAS"]))];
+      kodSet.sort().forEach(kod => {
+        const option = document.createElement("option");
+        option.value = kod;
+        option.textContent = kod;
+        kelasSelect.appendChild(option);
+      });
+
+      kelasSelect.addEventListener("change", () => {
+        const kod = kelasSelect.value;
+        const filtered = data.filter(item => item["KOD KELAS"] === kod);
+
+        let html = `<h3>Senarai Pelajar untuk ${kod}</h3><ul>`;
+        filtered.forEach(item => {
+          html += `<li>${item.NAMA}</li>`;
+        });
+        html += `</ul>`;
+        pelajarData.innerHTML = html;
+      });
+    })
+    .catch(err => {
+      pelajarData.innerHTML = "Gagal mendapatkan data.";
+      console.error(err);
+    });
+});
