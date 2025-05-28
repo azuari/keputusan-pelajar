@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -54,61 +53,4 @@ body {
     0%   { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
   }
-=======
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding-bottom: 40px;
-    background-color: #f9f9f9;
-  }
-  .container {
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-top: 40px;
-  }
-  h1 {
-    text-align: center;
-    color: #333;
-  }
-  label {
-    display: block;
-    margin-top: 20px;
-    font-weight: bold;
-  }
-  select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  #pelajarData {
-    margin-top: 30px;
-  }
-  .marquee {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-    position: fixed;
-    bottom: 0;
-    background: #222;
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-  }
-  .marquee::after {
-    content: attr(data-text);
-    display: inline-block;
-    animation: scroll 20s linear infinite;
-  }
-  @keyframes scroll {
-    0%   { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
->>>>>>> 12161f13bc9d364cc76072c43afe156ba484fae2
-  
+ 
