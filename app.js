@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbydnNXbRFtB5zlklvv_VnaFaVIiuKOjIqqbS6o-FNeckDvIXa9Il6ufLuFfxD2PfD5Ydg/exec"; // ganti dengan URL anda
+const scriptURL = "https://script.google.com/macros/s/AKfycbzC2A7OkEq6b1q9Fx10ObFZejhyGD3HF8FWdFRDZc8hgKdRWGFFul3YhbO3olWDjcDQ/exec"; // ganti dengan URL anda
 
 document.addEventListener("DOMContentLoaded", () => {
   const kelasSelect = document.getElementById("kelasSelect");
