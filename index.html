@@ -3,40 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Keputusan Pelajar</title>
+  <title>Maklumat Pelajar</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-  .marquee {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-    position: fixed;
-    bottom: 0;
-    background: #222;
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-  }
-  .marquee::after {
-    content: attr(data-text);
-    display: inline-block;
-    animation: scroll 20s linear infinite;
-  }
-  @keyframes scroll {
-    0%   { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Semakan Keputusan Pelajar</h1>
-    <label for="kelasSelect">Pilih Kod Kelas:</label>
-    <select id="kelasSelect"></select>
-    <div id="pelajarData"></div>
-  </div>
-  <div id="admin-message" class="marquee" data-text="Memuat mesej..."></div>
-  <script src="app.js"></script>
+  <h1>Senarai Pelajar</h1>
+  <select id="kodKursusSelect"></select>
+  <button onclick="loadData()">Papar Semua</button>
+  <table id="dataTable"></table>
+  <script src="script.js"></script>
 </body>
 </html>
